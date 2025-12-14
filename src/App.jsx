@@ -29,12 +29,15 @@ function App() {
     <div className="app">
       <GameHeader score={score} moves={moves} onReset={initializeGame} />
 
-      {isGameComplete && <WinMessage moves={moves} />}
-      <div className="grid grid-cols-4 gap-4 max-w-150 w-full">
-        {cards.map((card) => (
-          <Card key={card.id} card={card} onClick={handleCardClick} />
-        ))}
-      </div>
+      {isGameComplete ? (
+  <WinMessage moves={moves} />
+) : (
+  <div className="grid grid-cols-4 gap-4 max-w-150 w-full">
+    {cards.map((card) => (
+      <Card key={card.id} card={card} onClick={handleCardClick} />
+    ))}
+  </div>
+)}
     </div>
   );
 }

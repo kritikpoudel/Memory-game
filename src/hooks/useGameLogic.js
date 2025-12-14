@@ -32,7 +32,7 @@ const useGameLogic = (cardValues) => {
     setMoves(0);
     setScore(0);
     setFlippedCards([]);
-    setFlippedCards([]);
+    setMatchedCards([])
   };
   useEffect(() => {
     initializeGame();
